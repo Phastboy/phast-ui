@@ -1,0 +1,14 @@
+name: Update Contributors
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * 0" # Runs weekly (every Sunday at midnight UTC)
+
+jobs:
+  update-contributors:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Update Contributors
+      uses: github/contributors@v1.3.0
