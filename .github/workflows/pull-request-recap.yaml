@@ -1,17 +1,1 @@
-name: Pull Request Recap
 
-on:
-  pull_request:
-    types: [opened, edited, closed]
-
-jobs:
-  recap:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Recap changes
-        uses: flowwer-dev/recap@main
-        with:
-          openai-apikey: ${{ secrets.OPENAI_API_KEY }}
